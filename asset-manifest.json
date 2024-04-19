@@ -1,14 +1,14 @@
 {
   "files": {
-    "main.css": "/goit-react-woolf-hw-03-image-finder/static/css/main.96b9368f.css",
-    "main.js": "/goit-react-woolf-hw-03-image-finder/static/js/main.cba22977.js",
-    "index.html": "/goit-react-woolf-hw-03-image-finder/index.html",
-    "static/media/icon-search.svg": "/goit-react-woolf-hw-03-image-finder/static/media/icon-search.1968d156e100beb4e474.svg",
-    "main.96b9368f.css.map": "/goit-react-woolf-hw-03-image-finder/static/css/main.96b9368f.css.map",
-    "main.cba22977.js.map": "/goit-react-woolf-hw-03-image-finder/static/js/main.cba22977.js.map"
+    "main.css": "/goit-react-woolf-hw-04-images/static/css/main.ce4e3f14.css",
+    "main.js": "/goit-react-woolf-hw-04-images/static/js/main.7e01c661.js",
+    "index.html": "/goit-react-woolf-hw-04-images/index.html",
+    "static/media/icon-search.svg": "/goit-react-woolf-hw-04-images/static/media/icon-search.1968d156e100beb4e474.svg",
+    "main.ce4e3f14.css.map": "/goit-react-woolf-hw-04-images/static/css/main.ce4e3f14.css.map",
+    "main.7e01c661.js.map": "/goit-react-woolf-hw-04-images/static/js/main.7e01c661.js.map"
   },
   "entrypoints": [
-    "static/css/main.96b9368f.css",
-    "static/js/main.cba22977.js"
+    "static/css/main.ce4e3f14.css",
+    "static/js/main.7e01c661.js"
   ]
 }

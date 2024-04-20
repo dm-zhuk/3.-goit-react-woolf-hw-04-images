@@ -1,43 +1,36 @@
+import React, { useEffect } from 'react';
 import css from './index.module.css';
-import { Component } from 'react';
 
-export class Modal extends Component {
-  componentDidMount() {
-    window.addEventListener('keydown', this.handleKeyEvt);
-  }
+const Modal = ({ largeImageURL, tags, onCloseModal }) => {
+  useEffect(() => {
+    const handleKeyEvt = ({ key }) => {
+      key === 'Escape' && onCloseModal();
+    };
+    window.addEventListener('keydown', handleKeyEvt);
 
-  componentWillUnmount() {
-    window.removeEventListener('keydown', this.handleKeyEvt);
-  }
+    return () => {
+      window.removeEventListener('keydown', handleKeyEvt);
+    };
+  }, [onCloseModal]);
 
-  handleKeyEvt = ({ key }) => {
-    key === 'Escape' && this.props.onCloseModal();
-  };
-
-  onBackdropClick = evt => {
+  const onBackdropClick = evt => {
     if (evt.currentTarget === evt.target) {
-      this.props.onCloseModal();
+      onCloseModal();
     }
   };
 
-  handleLoadedImg = () => {
-    this.setState({ isLoading: false });
-  };
-
-  render() {
-    return (
-      <div className={css.overlay} onClick={this.onBackdropClick}>
-        <div className={css.modal}>
-          <img
-            src={this.props.largeImageURL}
-            alt={this.props.tags}
-            onLoad={this.handleLoadedImg}
-            onError={this.handleLoadedImg}
-          />
-        </div>
+  return (
+    <div className={css.overlay} onClick={onBackdropClick}>
+      <div className={css.modal}>
+        <img src={largeImageURL} alt={tags} />
       </div>
-    );
-  }
-}
+    </div>
+  );
+};
 
 export default Modal;
+
+/* 
+The Modal component is now a functional comp-t that takes props as input.
+Lifecycle logic (componentDidMount/WillUnmount is replaced with `useEffect` to add an eventListener for 'Escape' key on mount / remove on unmount. The `onCloseModal` f - as dependency to `useEffect` hook to update eventListener when f changes
+ */
